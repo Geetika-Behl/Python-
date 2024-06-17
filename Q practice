@@ -1,0 +1,18 @@
+'''You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.'''
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        a=[]
+        b=0
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+               b=nums[i]+nums[j]
+               if b==target and i!=j:
+                    a.append(i)
+                    a.append(j)
+                    return a
