@@ -1,2 +1,4 @@
-PYTHON Q practice
-Leet code Q 
+PYTHON Practice
+Leet code problem solving
+Day1 - Basic Q 
+
