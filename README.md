@@ -23,5 +23,5 @@
 3. Day3- [Functions & Lambda](https://github.com/Geetika-Behl/Python-/blob/main/Day3_Function.ipynb)
 4. Day4- [Modules](https://github.com/Geetika-Behl/Python-/blob/main/Day_4.ipynb)
 
-##Summary 
+## Summary 
 <p1> I've learned a lot about Python, from creating virtual environments to importing modules. Each day, I develop my skills further by practicing at least two questions on LeetCode. This daily practice has improved my problem-solving skills and made my decision-making quicker and more efficient. </p1>
