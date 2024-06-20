@@ -1,5 +1,6 @@
 Q You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -30,7 +31,8 @@ class Solution(object):
         else:
             return str(x) == str(x)[::-1]
             return True
-# Q Given a roman numeral, convert it to an integer.
+Q Given a roman numeral, convert it to an integer.
+
 class Solution(object):
     def romanToInt(self, s):
         """
@@ -51,4 +53,25 @@ class Solution(object):
             sum += dict.get(char)
             
         return(sum)
+
+Q Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
+
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        if not strs:
+            return ""  
+        min_len = min(len(s) for s in strs)
+        
+        common_prefix = ""
+        for i in range(min_len):
+            current_char = strs[0][i]
+            for string in strs:
+                if string[i] != current_char:
+                    return common_prefix 
+            
+            common_prefix += current_char 
+        
+        return common_prefix
+
+        
         
