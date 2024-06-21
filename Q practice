@@ -1,4 +1,4 @@
-Q You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+Q1 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 class Solution(object):
@@ -17,7 +17,7 @@ class Solution(object):
                     a.append(i)
                     a.append(j)
                     return a
-Q Given an integer x, return true if x is a palindrome, and false otherwise.
+Q2 Given an integer x, return true if x is a palindrome, and false otherwise.
 
 class Solution(object):
     def isPalindrome(self, x):
@@ -31,7 +31,7 @@ class Solution(object):
         else:
             return str(x) == str(x)[::-1]
             return True
-Q Given a roman numeral, convert it to an integer.
+Q3 Given a roman numeral, convert it to an integer.
 
 class Solution(object):
     def romanToInt(self, s):
@@ -54,7 +54,7 @@ class Solution(object):
             
         return(sum)
 
-Q Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
+Q4 Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
 
 class Solution(object):
     def longestCommonPrefix(self, strs):
@@ -73,7 +73,7 @@ class Solution(object):
         
         return common_prefix
 
-Q Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+Q5 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 An input string is valid if:
 . Open brackets must be closed by the same type of brackets.
 . Open brackets must be closed in the correct order.
@@ -90,6 +90,55 @@ class Solution(object):
                 return False
         return len(list) == 0
         
+Q6 You are given the heads of two sorted linked lists list1 and list2. Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.
 
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def mergeTwoLists(self, list1, list2):
+        """
+        :type list1: Optional[ListNode]
+        :type list2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        dump=ListNode(0)
+        tail=dump
+        while True:
+            if(list1==None):
+                tail.next=list2
+                break
+            
+            if(list2==None):
+                tail.next=list1
+                break
+
+            if(list1.val<=list2.val):
+                tail.next=list1
+                list1=list1.next
+            else:
+                tail.next=list2
+                list2=list2.next
+            tail=tail.next
+        return dump.next
+
+Q7 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
+Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.
+Return k.
+
+class Solution(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        temp = len(nums)-1
+        while temp > 0:
+            if nums[temp] == nums[temp-1]:
+                nums.pop(temp)
+            temp = temp-1
         
         
